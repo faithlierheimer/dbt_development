@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: stg_payments
+    description: "staging version of stripe_payments table"
+    columns:
+      - name: id
+        description: ""
+
+      - name: order_id
+        description: ""
+
+      - name: payment_method
+        description: ""
+
+      - name: payment_status
+        description: ""
+
+      - name: payment_amount
+        description: ""
+
+      - name: created
+        description: ""

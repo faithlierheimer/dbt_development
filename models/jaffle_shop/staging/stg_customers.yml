@@ -1,0 +1,13 @@
+version: 2
+models:
+  - name: stg_customers
+    description: "staging version of jaffleshop customers"
+    columns:
+      - name: customer_id
+        description: ""
+
+      - name: first_name
+        description: ""
+
+      - name: last_name
+        description: ""

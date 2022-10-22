@@ -2,7 +2,7 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'my_new_project'
+name: 'dbt_development'
 version: '1.0.0'
 config-version: 2
 
@@ -32,7 +32,16 @@ clean-targets:         # directories to be removed by `dbt clean`
 # as tables. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 models:
-  my_new_project:
-    # Applies to all files under models/example/
-    example:
-      materialized: view
+  dbt_development:
+    # Applies to all files under models/jaffleshop/
+    jaffle_shop:
+      +materialized: view
+      +incremental_strategy: merge
+      +post-hook:
+      - '{{ grant_privileges(this) }}'
+#arbitrarily dropping stg_payments model from my db on run start to make sure i understand the functionality
+on-run-start: drop view if exists hive_metastore.dbt_flierheimer.stg_payments
+on-run-end:
+- '{% if target.name == ''prod'' %}{{ grant_default_schema_permissions(schemas) }}{% else %}{{ grant_default_schema_permissions(schemas, keep_owner=True) }}{%
+  endif %}'
+      
