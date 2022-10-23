@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: stg_orders
+    description: "staging version of jaffleshop orders"
+    tags: ['jaffle']
+    columns:
+      - name: id
+        tests:
+          - unique
+        description: ""
+
+      - name: user_id
+        description: ""
+
+      - name: order_date
+        description: ""
+        tags: ["dates"]
+
+      - name: order_status
+        description: ""
