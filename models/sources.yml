@@ -1,7 +1,6 @@
 version: 2
 sources:
   - name: default
-    database: default
     tables:
       - name: jaffle_shop_customers
         columns:
