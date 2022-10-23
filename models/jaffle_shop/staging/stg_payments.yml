@@ -5,6 +5,8 @@ models:
     description: "staging version of stripe_payments table"
     columns:
       - name: id
+        tests:
+          - unique
         description: ""
 
       - name: order_id
@@ -21,3 +23,4 @@ models:
 
       - name: created
         description: ""
+        tags: ["dates"]

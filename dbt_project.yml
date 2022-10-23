@@ -18,6 +18,8 @@ test-paths: ["tests"]
 seed-paths: ["seeds"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
+#this is just a custom list of directories where docs blocks are located. 
+docs-paths: ["docs"]
 
 target-path: "target"  # directory which will store compiled SQL files
 clean-targets:         # directories to be removed by `dbt clean`
@@ -39,8 +41,10 @@ models:
       +incremental_strategy: merge
       +post-hook:
       - '{{ grant_privileges(this) }}'
+      staging:
+        +tags: staging_models
 #arbitrarily dropping stg_payments model from my db on run start to make sure i understand the functionality
-on-run-start: drop view if exists hive_metastore.dbt_flierheimer.stg_payments
+on-run-start: drop table if exists hive_metastore.dbt_flierheimer.stg_payments_final
 on-run-end:
 - '{% if target.name == ''prod'' %}{{ grant_default_schema_permissions(schemas) }}{% else %}{{ grant_default_schema_permissions(schemas, keep_owner=True) }}{%
   endif %}'

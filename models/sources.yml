@@ -3,12 +3,21 @@ sources:
   - name: default
     tables:
       - name: jaffle_shop_customers
+        tags: ['jaffle']
         columns:
           - name: id
           - name: first_name
           - name: last_name
-
       - name: jaffle_shop_orders
+        loaded_at_field: order_date
+        tags: ['jaffle']
+        freshness:
+          warn_after:
+            count: 900
+            period: day
+          error_after:
+            count: 2000
+            period: day
         columns:
           - name: id
           - name: user_id

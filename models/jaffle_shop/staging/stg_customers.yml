@@ -2,8 +2,11 @@ version: 2
 models:
   - name: stg_customers
     description: "staging version of jaffleshop customers"
+    tags: ['jaffle']
     columns:
       - name: customer_id
+        tests:
+          - unique
         description: ""
 
       - name: first_name
