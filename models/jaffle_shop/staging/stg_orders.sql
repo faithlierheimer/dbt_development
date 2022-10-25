@@ -7,8 +7,8 @@ with source as (
 renamed as (
 
     select
-        id,
-        user_id,
+        id order_id,
+        user_id customer_id,
         order_date,
         status order_status
 
