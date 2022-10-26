@@ -5,7 +5,7 @@ models:
     description: "staging version of jaffleshop orders"
     tags: ['jaffle']
     columns:
-      - name: id
+      - name: order_id
         tests:
           - unique
         description: ""
