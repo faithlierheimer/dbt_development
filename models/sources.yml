@@ -32,3 +32,23 @@ sources:
           - name: status
           - name: amount
           - name: created
+      - name: dbt_pnormile_usda_commodity_volume_report
+        columns:
+          - name: commodity
+          - name: mode
+          - name: origin
+          - name: range_type
+          - name: start_Time
+          - name: end_time
+          - name: units
+          - name: units_value
+          - name: value
+          - name: file_date
+          - name: link_name
+          - name: time 
+      - name: hubspot_names
+        columns:
+          - name: hubspot_id
+          - name: hubspot_name
+          - name: hubspot_website
+          - name: company_id

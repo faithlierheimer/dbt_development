@@ -1,0 +1,1 @@
+select * from {{ ref('usaid_raw') }}
