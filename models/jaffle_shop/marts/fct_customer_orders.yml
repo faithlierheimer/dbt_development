@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: fct_customer_orders
+    description: ""
+    columns:
+      - name: customer_id
+        description: ""
+
+      - name: order_id
+        description: ""
+
+      - name: order_date
+        description: ""
+
+      - name: order_status
+        description: ""
+
+      - name: total_amount_paid
+        description: ""
+
+      - name: payment_finalized_date
+        description: ""
+
+      - name: transaction_seq
+        description: ""
+
+      - name: customer_sales_seq
+        description: ""
+
+      - name: new_vs_return_customer
+        description: ""
+
+      - name: customer_lifetime_value
+        description: ""
+
+      - name: fdos
+        description: ""

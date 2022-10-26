@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: int_orders
+    description: ""
+    columns:
+      - name: customer_id
+        description: ""
+
+      - name: order_id
+        description: ""
+
+      - name: order_date
+        description: ""
+
+      - name: order_status
+        description: ""
+
+      - name: total_amount_paid
+        description: ""
+
+      - name: payment_finalized_date
+        description: ""
