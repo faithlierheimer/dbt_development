@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: stg_phs_chicago
+    description: ""
+    columns:
+      - name: facility
+        description: ""
+
+      - name: community
+        description: ""
+
+      - name: category
+        description: ""
+
+      - name: street_address
+        description: ""
+

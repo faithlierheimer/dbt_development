@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: hubspot_names_ss
+    description: ""
+    columns:
+      - name: hubspot_id
+        description: ""
+
+      - name: hubspot_name
+        description: ""
+
+      - name: hubspot_website
+        description: ""
+
+      - name: company_id
+        description: ""
+
+      - name: dbt_scd_id
+        description: ""
+
+      - name: dbt_updated_at
+        description: ""
+
+      - name: dbt_valid_from
+        description: ""
+
+      - name: dbt_valid_to
+        description: ""
