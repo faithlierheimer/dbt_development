@@ -53,7 +53,8 @@ final as (
     first_value(order_date) over (
       partition by p.customer_id
       order by order_date
-      ) as fdos
+      ) as fdos,
+      {{ calculate_running_total('total_amount_paid', 'order_id')}} running_total_tablewide
   from
     paid_orders p
     left join customer_orders c on p.customer_id = c.customer_id  order by

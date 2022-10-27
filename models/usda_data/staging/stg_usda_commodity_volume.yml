@@ -1,0 +1,41 @@
+version: 2
+
+models:
+  - name: stg_usda_commodity_volume
+    description: ""
+    columns:
+      - name: commodity
+        description: ""
+
+      - name: mode
+        description: ""
+
+      - name: origin
+        description: ""
+
+      - name: range_type
+        description: ""
+
+      - name: start_time
+        description: ""
+
+      - name: end_time
+        description: ""
+
+      - name: units
+        description: ""
+
+      - name: units_value
+        description: ""
+
+      - name: value_dollars
+        description: ""
+
+      - name: file_date
+        description: ""
+
+      - name: link_name
+        description: ""
+
+      - name: time_scraped
+        description: ""
