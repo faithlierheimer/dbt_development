@@ -1,5 +1,5 @@
 {#This table is primarily from coding along with the dbt learn on demand course on Jinja.#}
-
+{%- set payment_methods = ['bank_transfer', 'coupon', 'credit_card', 'gift_card'] -%}
 with payments as (
     select * from {{ ref('stg_payments') }}
 ),
@@ -7,10 +7,14 @@ with payments as (
 pivoted as (
     select
         order_id,
-        sum(case when payment_method = 'bank_transfer' then payment_amount else 0 end) bank_transfer_amount,
-        sum(case when payment_method = 'coupon' then payment_amount else 0 end) coupon_amount,
-        sum(case when payment_method = 'credit_card' then payment_amount else 0 end) credit_card_amount,
-        sum(case when payment_method = 'gift_card' then payment_amount else 0 end) gift_card_amount
+        {#- Set statement lets me set a list of items to iterate over. -#}
+        {% for method in payment_methods -%}
+            {% if loop.last == false %}
+            sum(case when payment_method = '{{ method }}' then payment_amount else 0 end) {{ method }}_amount,
+            {% else %}
+            sum(case when payment_method = '{{ method }}' then payment_amount else 0 end) {{ method }}_amount
+            {% endif %}
+        {% endfor %}
     from
         payments
     where
