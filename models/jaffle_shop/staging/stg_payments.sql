@@ -11,7 +11,7 @@ renamed as (
         orderid order_id,
         paymentmethod payment_method,
         status payment_status,
-        amount payment_amount,
+        {{ cents_to_dollars('amount') }} payment_amount,
         created
 
     from source
