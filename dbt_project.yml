@@ -14,6 +14,11 @@ snapshot-paths: ["snapshots"]
 #this is just a custom list of directories where docs blocks are located. 
 docs-paths: ["docs"]
 
+#to use dbt project evaluator, need to run: dbt build --select package:dbt_project_evaluator
+dispatch:
+  - macro_namespace: dbt_utils
+    search_order: ['dbt_project_evaluator', 'spark_utils', 'dbt_utils']
+
 target-path: "target"  # directory which will store compiled SQL files
 clean-targets:         # directories to be removed by `dbt clean`
   - "target"
